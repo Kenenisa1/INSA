@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INSA Summer Camp DA — Questions</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <nav class="navbar" id="main-navbar">
+    <a href="index.html" class="navbar__brand">
+      <div class="navbar__logo">DA</div>
+      <div class="navbar__brand-text">
+        <span class="navbar__brand-title">INSA Summer Camp</span>
+        <span class="navbar__brand-sub">Daily Activity Blog</span>
+      </div>
+    </a>
+
+    <ul class="navbar__nav">
+      <li><a href="index.html" class="navbar__nav-link"><i class="fa-solid fa-newspaper"></i> Feed</a></li>
+      <li><a href="questions.html" class="navbar__nav-link active"><i class="fa-solid fa-circle-question"></i> Questions</a></li>
+      <li><a href="profile.html" class="navbar__nav-link"><i class="fa-solid fa-user-circle"></i> Profile</a></li>
+    </ul>
+
+    <div class="navbar__actions">
+      <div class="navbar__search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search questions…" />
+      </div>
+      <button class="icon-btn" title="Notifications">
+        <i class="fa-solid fa-bell"></i>
+        <span class="badge">3</span>
+      </button>
+      <a href="profile.html" class="navbar__avatar">
+        <div class="avatar avatar--sm">
+          <div class="avatar__initials">AK</div>
+          <span class="online-dot"></span>
+        </div>
+        <span class="navbar__avatar-name">Abebe K.</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="page-wrapper">
+    <div class="questions-layout">
+      <section>
+        <div class="questions-header">
+          <h1 class="questions-header__title">Q&amp;A Board</h1>
+          <button class="btn btn--primary"><i class="fa-solid fa-plus"></i> Ask a Question</button>
+        </div>
+
+        <div class="ask-question-card">
+          <h3>Need help with a concept or project?</h3>
+          <input class="form-input" type="text" placeholder="What would you like to ask?" />
+          <textarea class="comment-input" placeholder="Add context so trainers and peers can help you better..."></textarea>
+          <button class="btn btn--ghost"><i class="fa-solid fa-paper-plane"></i> Preview</button>
+        </div>
+
+        <article class="question-card">
+          <div class="question-card__votes">
+            <button class="vote-btn"><i class="fa-solid fa-caret-up"></i></button>
+            <div class="vote-count">18</div>
+            <button class="vote-btn"><i class="fa-solid fa-caret-down"></i></button>
+          </div>
+          <div class="question-card__body">
+            <div class="question-card__title">How can I make my CSS layout responsive without breaking the design?</div>
+            <div class="question-card__excerpt">I’m trying to keep the spacing and alignment looking polished on both mobile and desktop screens.</div>
+            <div class="question-card__footer">
+              <div class="tags">
+                <span class="tag tag--primary">CSS</span>
+                <span class="tag tag--accent">Responsive design</span>
+              </div>
+              <div class="question-card__meta">
+                <span><i class="fa-solid fa-comment"></i> 5 answers</span>
+                <span><i class="fa-solid fa-clock"></i> 20 min ago</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="question-card">
+          <div class="question-card__votes">
+            <button class="vote-btn"><i class="fa-solid fa-caret-up"></i></button>
+            <div class="vote-count">12</div>
+            <button class="vote-btn"><i class="fa-solid fa-caret-down"></i></button>
+          </div>
+          <div class="question-card__body">
+            <div class="question-card__title">What is the difference between a list and a table in HTML?</div>
+            <div class="question-card__excerpt">I want to ensure I’m using the right structure for content that should be read or grouped by meaning.</div>
+            <div class="question-card__footer">
+              <div class="tags">
+                <span class="tag tag--info">HTML</span>
+                <span class="tag tag--success">Semantics</span>
+              </div>
+              <div class="question-card__meta">
+                <span><i class="fa-solid fa-comment"></i> 3 answers</span>
+                <span><i class="fa-solid fa-clock"></i> 45 min ago</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="question-card">
+          <div class="question-card__votes">
+            <button class="vote-btn"><i class="fa-solid fa-caret-up"></i></button>
+            <div class="vote-count">7</div>
+            <button class="vote-btn"><i class="fa-solid fa-caret-down"></i></button>
+          </div>
+          <div class="question-card__body">
+            <div class="question-card__title">Is it better to practice with a small project or with daily exercises?</div>
+            <div class="question-card__excerpt">I’m trying to improve without losing motivation, and I want advice from people who have been there.</div>
+            <div class="question-card__footer">
+              <div class="tags">
+                <span class="tag tag--accent">Learning</span>
+                <span class="tag tag--primary">Study habits</span>
+              </div>
+              <div class="question-card__meta">
+                <span><i class="fa-solid fa-comment"></i> 7 answers</span>
+                <span><i class="fa-solid fa-clock"></i> 1 hr ago</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <aside class="sidebar-right">
+        <div class="card">
+          <div class="card__header">
+            <span class="card__title"><i class="fa-solid fa-filter"></i> Filters</span>
+          </div>
+          <div class="tags-cloud">
+            <span class="tag tag--primary">Unanswered</span>
+            <span class="tag tag--accent">Most voted</span>
+            <span class="tag tag--info">Recent</span>
+            <span class="tag tag--success">Trainer answers</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__header">
+            <span class="card__title"><i class="fa-solid fa-trophy"></i> Helpful community</span>
+          </div>
+          <div class="people-list">
+            <div class="person-item">
+              <div class="avatar avatar--sm">
+                <div class="avatar__initials" style="background: linear-gradient(135deg,#6366f1,#8b5cf6);">MT</div>
+              </div>
+              <div class="person-item__info">
+                <div class="person-item__name">Mr. Tadesse</div>
+                <div class="person-item__role">Answered 12 questions</div>
+              </div>
+            </div>
+            <div class="person-item">
+              <div class="avatar avatar--sm">
+                <div class="avatar__initials" style="background: linear-gradient(135deg,#10b981,#059669);">RY</div>
+              </div>
+              <div class="person-item__info">
+                <div class="person-item__name">Ruth Y.</div>
+                <div class="person-item__role">Top contributor</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
