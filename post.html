@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INSA Summer Camp DA — Post Detail</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <nav class="navbar" id="main-navbar">
+    <a href="index.html" class="navbar__brand">
+      <div class="navbar__logo">DA</div>
+      <div class="navbar__brand-text">
+        <span class="navbar__brand-title">INSA Summer Camp</span>
+        <span class="navbar__brand-sub">Daily Activity Blog</span>
+      </div>
+    </a>
+
+    <ul class="navbar__nav">
+      <li><a href="index.html" class="navbar__nav-link"><i class="fa-solid fa-newspaper"></i> Feed</a></li>
+      <li><a href="questions.html" class="navbar__nav-link"><i class="fa-solid fa-circle-question"></i> Questions</a></li>
+      <li><a href="profile.html" class="navbar__nav-link"><i class="fa-solid fa-user-circle"></i> Profile</a></li>
+    </ul>
+
+    <div class="navbar__actions">
+      <div class="navbar__search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search posts…" />
+      </div>
+      <button class="icon-btn" title="Notifications">
+        <i class="fa-solid fa-bell"></i>
+        <span class="badge">4</span>
+      </button>
+      <a href="profile.html" class="navbar__avatar">
+        <div class="avatar avatar--sm">
+          <div class="avatar__initials">AK</div>
+          <span class="online-dot"></span>
+        </div>
+        <span class="navbar__avatar-name">Abebe K.</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="page-wrapper">
+    <div class="post-detail-layout">
+      <article class="post-detail">
+        <div class="post-detail__cover">
+          <img src="assets/images/data_science.png" alt="Data science session at INSA Summer Camp" />
+          <div class="post-detail__cover-overlay"></div>
+        </div>
+
+        <div class="post-detail__header">
+          <div class="post-detail__category-row">
+            <span class="tag tag--primary">Machine Learning</span>
+            <span class="tag tag--accent">Day 3</span>
+            <span class="tag tag--info">Python</span>
+          </div>
+          <h1 class="post-detail__title">How we used Python notebooks to explore data patterns</h1>
+
+          <div class="post-detail__author-bar">
+            <div class="avatar avatar--md">
+              <div class="avatar__initials" style="background: linear-gradient(135deg,#10b981,#059669);">MT</div>
+              <span class="online-dot"></span>
+            </div>
+            <div class="post-detail__author-info">
+              <div class="post-detail__author-name">Mr. Tadesse Haile <span class="role-badge role-badge--trainer"><i class="fa-solid fa-chalkboard-teacher"></i> Trainer</span></div>
+              <div class="post-detail__author-meta">Today at 9:00 AM · Machine Learning Track</div>
+            </div>
+            <div class="post-detail__stats">
+              <span class="post-detail__stat"><i class="fa-solid fa-eye"></i> 184 views</span>
+              <span class="post-detail__stat"><i class="fa-solid fa-comment"></i> 8 comments</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="post-detail__content">
+          <p>
+            Today’s session focused on turning raw data into patterns that feel understandable. We started with a simple notebook workflow and practiced reading datasets carefully before jumping into models.
+          </p>
+          <p>
+            The most valuable lesson was not the code itself, but the habit of asking the right questions first: what are we trying to learn, which features matter, and how can we explain the outcome clearly to someone new to the topic?
+          </p>
+          <div class="highlight-box">
+            A strong beginner habit is to inspect the data visually first before applying any complex algorithm.
+          </div>
+          <h3>What we covered</h3>
+          <ul>
+            <li>Loading a dataset and checking its shape and columns</li>
+            <li>Using pandas to clean and organize values</li>
+            <li>Creating simple visualizations with matplotlib</li>
+            <li>Discussing how to interpret patterns without overfitting</li>
+          </ul>
+          <p>
+            The group shared many thoughtful questions during the lab, especially around how to avoid bias and why a model can look accurate on paper but still fail in practice. That discussion made the session feel especially engaging.
+          </p>
+        </div>
+
+        <div class="reaction-bar-full">
+          <button class="reaction-btn reaction-btn--like active--like"><i class="fa-solid fa-thumbs-up"></i><span>24</span></button>
+          <button class="reaction-btn reaction-btn--dislike"><i class="fa-solid fa-thumbs-down"></i><span>1</span></button>
+          <button class="reaction-btn reaction-btn--comment"><i class="fa-solid fa-comment"></i><span>Comment</span></button>
+          <button class="reaction-btn reaction-btn--bookmark"><i class="fa-solid fa-bookmark"></i><span>Bookmark</span></button>
+          <button class="reaction-btn reaction-btn--share"><i class="fa-solid fa-share-nodes"></i><span>Share</span></button>
+        </div>
+
+        <section class="comments-section">
+          <h3 class="comments-title">Discussion <span class="count">4</span></h3>
+
+          <form class="comment-form">
+            <div class="comment-input-wrapper">
+              <textarea class="comment-input" placeholder="Leave a thoughtful comment or question..."></textarea>
+            </div>
+            <button class="btn btn--primary" type="submit">Post Comment</button>
+          </form>
+
+          <div class="comment-list">
+            <div class="comment-item">
+              <div class="avatar avatar--md">
+                <div class="avatar__initials" style="background: linear-gradient(135deg,#6366f1,#8b5cf6);">AZ</div>
+              </div>
+              <div class="comment-item__body">
+                <div class="comment-item__header">
+                  <span class="comment-item__name">Alem Z.</span>
+                  <span class="comment-item__time">12 min ago</span>
+                </div>
+                <p class="comment-item__text">The notebook examples were very clear. I especially liked the step where we checked missing values before plotting anything.</p>
+                <div class="comment-item__actions">
+                  <button class="comment-action"><i class="fa-solid fa-reply"></i> Reply</button>
+                  <button class="comment-action"><i class="fa-solid fa-heart"></i> Like</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="comment-item">
+              <div class="avatar avatar--md">
+                <div class="avatar__initials" style="background: linear-gradient(135deg,#f59e0b,#fbbf24);">RY</div>
+              </div>
+              <div class="comment-item__body">
+                <div class="comment-item__header">
+                  <span class="comment-item__name">Ruth Y.</span>
+                  <span class="comment-item__time">28 min ago</span>
+                </div>
+                <p class="comment-item__text">Could we also try a mini project tomorrow where we predict a simple outcome from our own data?</p>
+                <div class="comment-replies">
+                  <div class="comment-reply">
+                    <div class="avatar avatar--sm">
+                      <div class="avatar__initials" style="background: linear-gradient(135deg,#10b981,#059669);">MT</div>
+                    </div>
+                    <div class="comment-reply__body">
+                      <div class="comment-item__header">
+                        <span class="comment-item__name">Mr. Tadesse</span>
+                        <span class="comment-item__time">10 min ago</span>
+                      </div>
+                      <p class="comment-item__text">Absolutely — we can build a small classification task tomorrow and review the results together.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <aside class="sidebar-right">
+        <div class="card">
+          <div class="card__header">
+            <span class="card__title"><i class="fa-solid fa-circle-info"></i> About this post</span>
+          </div>
+          <div class="people-list">
+            <div class="person-item">
+              <div class="avatar avatar--sm">
+                <div class="avatar__initials" style="background: linear-gradient(135deg,#6366f1,#8b5cf6);">MT</div>
+              </div>
+              <div class="person-item__info">
+                <div class="person-item__name">Mentor-led session</div>
+                <div class="person-item__role">Live coding lab</div>
+              </div>
+            </div>
+            <div class="person-item">
+              <div class="avatar avatar--sm">
+                <div class="avatar__initials" style="background: linear-gradient(135deg,#8b5cf6,#a78bfa);">DA</div>
+              </div>
+              <div class="person-item__info">
+                <div class="person-item__name">Daily activity</div>
+                <div class="person-item__role">Day 3 reflection</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__header">
+            <span class="card__title"><i class="fa-solid fa-tags"></i> Related topics</span>
+          </div>
+          <div class="tags-cloud">
+            <span class="tag tag--primary">Data Science</span>
+            <span class="tag tag--accent">Jupyter</span>
+            <span class="tag tag--info">Visualization</span>
+            <span class="tag tag--success">Practice Lab</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__header">
+            <span class="card__title"><i class="fa-solid fa-users"></i> Conversation leaders</span>
+          </div>
+          <div class="people-list">
+            <div class="person-item">
+              <span class="rank-badge rank-badge--1">1</span>
+              <div class="avatar avatar--sm">
+                <div class="avatar__initials" style="background: linear-gradient(135deg,#6366f1,#8b5cf6);">AZ</div>
+              </div>
+              <div class="person-item__info">
+                <div class="person-item__name">Alem Z.</div>
+                <div class="person-item__role">Active learner</div>
+              </div>
+              <span class="person-item__score">+12</span>
+            </div>
+            <div class="person-item">
+              <span class="rank-badge rank-badge--2">2</span>
+              <div class="avatar avatar--sm">
+                <div class="avatar__initials" style="background: linear-gradient(135deg,#10b981,#059669);">RY</div>
+              </div>
+              <div class="person-item__info">
+                <div class="person-item__name">Ruth Y.</div>
+                <div class="person-item__role">Curious problem-solver</div>
+              </div>
+              <span class="person-item__score">+9</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
