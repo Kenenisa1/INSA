@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INSA Summer Camp DA — Profile</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <nav class="navbar" id="main-navbar">
+    <a href="index.html" class="navbar__brand">
+      <div class="navbar__logo">DA</div>
+      <div class="navbar__brand-text">
+        <span class="navbar__brand-title">INSA Summer Camp</span>
+        <span class="navbar__brand-sub">Daily Activity Blog</span>
+      </div>
+    </a>
+
+    <ul class="navbar__nav">
+      <li><a href="index.html" class="navbar__nav-link"><i class="fa-solid fa-newspaper"></i> Feed</a></li>
+      <li><a href="questions.html" class="navbar__nav-link"><i class="fa-solid fa-circle-question"></i> Questions</a></li>
+      <li><a href="profile.html" class="navbar__nav-link active"><i class="fa-solid fa-user-circle"></i> Profile</a></li>
+    </ul>
+
+    <div class="navbar__actions">
+      <div class="navbar__search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search posts…" />
+      </div>
+      <button class="icon-btn" title="Notifications">
+        <i class="fa-solid fa-bell"></i>
+        <span class="badge">2</span>
+      </button>
+      <a href="profile.html" class="navbar__avatar">
+        <div class="avatar avatar--sm">
+          <div class="avatar__initials">AK</div>
+          <span class="online-dot"></span>
+        </div>
+        <span class="navbar__avatar-name">Abebe K.</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="page-wrapper">
+    <div class="profile-layout">
+      <section class="profile-hero">
+        <img class="profile-hero__cover" src="assets/images/profile_cover.png" alt="Summer camp community backdrop" />
+        <div class="profile-hero__body">
+          <div class="profile-hero__avatar-row">
+            <div class="profile-hero__avatar">
+              <div class="avatar__initials">AK</div>
+            </div>
+            <div class="profile-hero__meta">
+              <h1 class="profile-hero__name">
+                Abebe Kebede
+                <span class="role-badge role-badge--student"><i class="fa-solid fa-graduation-cap"></i> Student</span>
+              </h1>
+              <div class="profile-hero__username">@abebe.k · Software Engineering Track</div>
+              <p class="profile-hero__bio">
+                Building confidence in web foundations and learning how to express ideas clearly through code and design.
+              </p>
+              <div class="badges-row">
+                <span class="achievement-badge achievement-badge--gold"><i class="fa-solid fa-star"></i> Daily streak 6</span>
+                <span class="achievement-badge achievement-badge--primary"><i class="fa-solid fa-lightbulb"></i> Curious learner</span>
+                <span class="achievement-badge achievement-badge--success"><i class="fa-solid fa-comments"></i> Helpful contributor</span>
+              </div>
+              <div class="profile-hero__actions">
+                <button class="btn btn--primary"><i class="fa-solid fa-plus"></i> New Post</button>
+                <button class="btn btn--ghost"><i class="fa-solid fa-envelope"></i> Message</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="profile-stats">
+        <div class="profile-stat-card">
+          <div class="profile-stat-card__icon profile-stat-card__icon--primary"><i class="fa-solid fa-file-lines"></i></div>
+          <div class="profile-stat-card__value">7</div>
+          <div class="profile-stat-card__label">Posts</div>
+        </div>
+        <div class="profile-stat-card">
+          <div class="profile-stat-card__icon profile-stat-card__icon--accent"><i class="fa-solid fa-thumbs-up"></i></div>
+          <div class="profile-stat-card__value">128</div>
+          <div class="profile-stat-card__label">Likes received</div>
+        </div>
+        <div class="profile-stat-card">
+          <div class="profile-stat-card__icon profile-stat-card__icon--success"><i class="fa-solid fa-calendar-check"></i></div>
+          <div class="profile-stat-card__value">12</div>
+          <div class="profile-stat-card__label">Days active</div>
+        </div>
+        <div class="profile-stat-card">
+          <div class="profile-stat-card__icon profile-stat-card__icon--warning"><i class="fa-solid fa-bookmark"></i></div>
+          <div class="profile-stat-card__value">4</div>
+          <div class="profile-stat-card__label">Bookmarks</div>
+        </div>
+      </section>
+
+      <div class="profile-tabs">
+        <button class="profile-tab active"><i class="fa-solid fa-file-lines"></i> My Posts</button>
+        <button class="profile-tab"><i class="fa-solid fa-bookmark"></i> Bookmarks</button>
+        <button class="profile-tab"><i class="fa-solid fa-circle-info"></i> About</button>
+      </div>
+
+      <div class="profile-posts-grid">
+        <article class="card profile-post-card">
+          <div class="card__header">
+            <span class="card__title"><i class="fa-solid fa-file-lines"></i> My latest post</span>
+          </div>
+          <h3 class="post-card__title">Understanding HTML structure and semantic tags</h3>
+          <p class="post-card__excerpt">A reflection on how structure and readability help both users and developers navigate content with confidence.</p>
+          <div class="tags">
+            <span class="tag tag--primary">HTML</span>
+            <span class="tag tag--accent">Web Foundations</span>
+          </div>
+          <div class="post-card__reactions">
+            <button class="reaction-btn reaction-btn--like active--like"><i class="fa-solid fa-thumbs-up"></i><span>18</span></button>
+            <button class="reaction-btn reaction-btn--comment"><i class="fa-solid fa-comment"></i><span>4</span></button>
+          </div>
+        </article>
+
+        <article class="card profile-post-card">
+          <div class="card__header">
+            <span class="card__title"><i class="fa-solid fa-file-lines"></i> Shared insight</span>
+          </div>
+          <h3 class="post-card__title">Why CSS layout feels easier when you think in boxes</h3>
+          <p class="post-card__excerpt">I’m learning how spacing, flow, and hierarchy turn a rough page into something polished and readable.</p>
+          <div class="tags">
+            <span class="tag tag--info">CSS</span>
+            <span class="tag tag--success">Design</span>
+          </div>
+          <div class="post-card__reactions">
+            <button class="reaction-btn reaction-btn--like active--like"><i class="fa-solid fa-thumbs-up"></i><span>12</span></button>
+            <button class="reaction-btn reaction-btn--comment"><i class="fa-solid fa-comment"></i><span>2</span></button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
