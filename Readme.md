@@ -2,7 +2,7 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=180&section=header&text=⚡%20INSA%20Camp%20Pulse&fontSize=42&fontColor=fff&animation=fadeIn" width="100%"/>
 </p>
 
-> **INSA Summer Camp Blog & Technical Knowledge-Sharing Platform**  
+> **INSA Summer Camp Blog Platform**  
 > A full-stack daily learning log, progress tracker, and Q&A platform engineered for students and trainers at the INSA Summer Camp.
 
 <p align="left">
@@ -18,7 +18,7 @@
 
 ###  Overview
 
-**INSA Camp Pulse** streamlines technical communication and collaborative learning during the intensive INSA Summer Camp program. 
+**INSA Summer Camp Blog Platform** streamlines technical communication and collaborative learning during the intensive INSA Summer Camp program. 
 
 Students publish structured daily reflection logs tagged by active camp days and tech stacks, interact through threaded comments, and post technical challenges to a Q&A forum where trainers and authors verify solutions.
 
@@ -26,23 +26,23 @@ Students publish structured daily reflection logs tagged by active camp days and
 
 ###  Key Capabilities
 
-* **📅 Daily Progress Feed:** Log daily engineering reflections tagged by camp day (`Day 1` to `Day 30`) and tech stack (`#NextJS`, `#MongoDB`, `#Prisma`).
-* **❓ Verified Q&A Forum:** Dedicated help desk featuring resolution filters (`Unanswered`, `Most Voted`, `Resolved`) and official answer acceptance by instructors or question authors.
-* **🔐 Role-Based Access Control (RBAC):** Distinct permissions and UI scopes for `STUDENT`, `TRAINER`, and `ADMIN` roles powered by NextAuth JWT claims.
-* **⚡ Type-Safe Mutations:** Next.js 16 React Server Actions integrated directly with Prisma ORM and React Server Components.
-* **🌙 Dark Glassmorphism UI:** Custom dark aesthetic optimized specifically to reduce eyestrain during prolonged coding sessions.
+* **Daily Progress Feed:** Log daily engineering reflections tagged by camp day (`Day 1` to `Day 30`) and tech stack (`#NextJS`, `#MongoDB`, `#Prisma`).
+* **Verified Q&A Forum:** Dedicated help desk featuring resolution filters (`Unanswered`, `Most Voted`, `Resolved`) and official answer acceptance by instructors or question authors.
+* **Role-Based Access Control (RBAC):** Distinct permissions and UI scopes for `STUDENT`, `TRAINER`, and `ADMIN` roles powered by NextAuth JWT claims.
+* **Type-Safe Mutations:** Next.js 16 React Server Actions integrated directly with Prisma ORM and React Server Components.
+* **Dark Glassmorphism UI:** Custom dark aesthetic optimized specifically to reduce eyestrain during prolonged coding sessions.
 
 ---
 
-### 🛠️ Technical Arsenal & Architecture
+###  Technical Arsenal & Architecture
 
-#### 🌐 Core Framework & Languages
+####  Core Framework & Languages
 ![Next.js](https://img.shields.io/badge/Next.js%2016-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React%2019-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-#### ⚙️ Backend, Data & Auth
+#### Backend, Data & Auth
 ![NodeJS](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Prisma](https://img.shields.io/badge/Prisma_ORM-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
