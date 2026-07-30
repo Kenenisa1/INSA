@@ -16,7 +16,7 @@
 
 ---
 
-### 📖 Overview
+###  Overview
 
 **INSA Camp Pulse** streamlines technical communication and collaborative learning during the intensive INSA Summer Camp program. 
 
@@ -24,7 +24,7 @@ Students publish structured daily reflection logs tagged by active camp days and
 
 ---
 
-### 🌟 Key Capabilities
+###  Key Capabilities
 
 * **📅 Daily Progress Feed:** Log daily engineering reflections tagged by camp day (`Day 1` to `Day 30`) and tech stack (`#NextJS`, `#MongoDB`, `#Prisma`).
 * **❓ Verified Q&A Forum:** Dedicated help desk featuring resolution filters (`Unanswered`, `Most Voted`, `Resolved`) and official answer acceptance by instructors or question authors.
@@ -50,7 +50,7 @@ Students publish structured daily reflection logs tagged by active camp days and
 
 ---
 
-### 📋 System Specification Summary
+### System Specification Summary
 
 | Domain | Technology | Implementation Details |
 | :--- | :--- | :--- |
@@ -64,9 +64,9 @@ Students publish structured daily reflection logs tagged by active camp days and
 
 ---
 
-### 📂 Repository Directory Architecture
+###  Repository Directory Architecture
 
-```text
+### text
 INSA_Daily_Activity/
 └── insa/
     ├── prisma/
@@ -91,4 +91,103 @@ INSA_Daily_Activity/
     ├── next.config.ts             # Next.js 16 framework configuration
     └── package.json
 
+---
 
+###  Getting Started
+
+#### 1.  Prerequisites
+
+Ensure your local development environment meets the following baseline requirements:
+
+| Requirement | Minimum Version | Notes |
+| :--- | :--- | :--- |
+| **Node.js** | `v18.17.0`+ | LTS release recommended |
+| **Package Manager** | `npm` / `pnpm` | Comes bundled with Node.js |
+| **Database** | MongoDB `v6.0`+ | Local MongoDB instance or [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) |
+
+---
+
+#### 2.  Installation & Local Setup
+
+**bash**
+# 1. Clone the repository
+git clone [https://github.com/Kenenisa1/INSA_Daily_Activity.git](https://github.com/Kenenisa1/INSA_Daily_Activity.git)
+cd INSA_Daily_Activity/insa
+
+# 2. Install project dependencies
+npm install
+
+# 3. Configure your environment file (.env)
+cp .env.example .env
+
+> ** Environment Variable Setup**  
+> Populate your `.env` file in the `insa/` directory with your database connection string and secret keys:
+
+env
+# MongoDB Connection String
+DATABASE_URL="mongodb+srv://<username>:<password>@cluster.mongodb.net/insa_camp_db?retryWrites=true&w=majority"
+
+# Authentication Security Settings
+NEXTAUTH_SECRET="your-32-character-production-secret-key"
+NEXTAUTH_URL="http://localhost:3000"
+
+bash
+### 4. Push Prisma schema to MongoDB
+npx prisma db push
+
+# 5. Seed initial mock data (Users, Posts, Q&A)
+npx prisma db seed
+
+# 6. Launch the development server
+npm run dev
+Visit http://localhost:3000 in your browser to view the application live!
+
+### Quality Assurance & Test Suite
+Run the full testing pipeline using the following standard commands:
+
+**Bash**
+# Execute unit & integration tests (Zod schemas, Server Actions)
+npm run test:unit
+
+# Execute End-to-End (E2E) browser automation tests
+npm run test:e2e
+
+# Run linting check across all TypeScript & App Router files
+npm run lint
+## Project System Documentation
+Comprehensive architecture design documents are available inside the /docs directory:
+
+**[SRS] Software Requirements Specification**: Detailed breakdown of functional, non-functional, and user constraints.
+
+**[SAD] System Architecture Document**: Next.js 16 App Router design topology, MongoDB document schemas, and security boundaries.
+
+**[API Spec] Interface Specification**: Complete contract details for Server Actions, REST API route handlers, and NextAuth claims.
+
+**[DB Spec] Database Specification**: Prisma schema layout, embedded document strategies, and MongoDB index optimization.
+
+### Author & Acknowledgments
+ ## License
+This project is open-source software licensed under the MIT License.
+
+## Plaintext
+**MIT License**
+
+**Copyright (c) 2026 Kenenisa Mieso**
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
