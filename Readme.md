@@ -64,8 +64,7 @@ Students publish structured daily reflection logs tagged by active camp days and
 
 ---
 
-##  Repository Directory Architecture
-
+```text
 INSA_Daily_Activity/
 └── insa/
     ├── prisma/
@@ -89,7 +88,7 @@ INSA_Daily_Activity/
     │   └── types/                 # Custom TypeScript interfaces & module augments
     ├── next.config.ts             # Next.js 16 framework configuration
     └── package.json
-
+```
 ---
 
 ##  Getting Started
