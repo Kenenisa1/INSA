@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=180&section=header&text=⚡%20INSA%20Camp%20Pulse&fontSize=42&fontColor=fff&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=180&section=header&text=%20INSA%20Summer%20Camp%20Blog%20Platform&fontSize=42&fontColor=fff&animation=fadeIn" width="100%"/>
 </p>
 
 > **INSA Summer Camp Blog Platform**  
@@ -16,7 +16,7 @@
 
 ---
 
-###  Overview
+##  Overview
 
 **INSA Summer Camp Blog Platform** streamlines technical communication and collaborative learning during the intensive INSA Summer Camp program. 
 
@@ -24,7 +24,7 @@ Students publish structured daily reflection logs tagged by active camp days and
 
 ---
 
-###  Key Capabilities
+##  Key Capabilities
 
 * **Daily Progress Feed:** Log daily engineering reflections tagged by camp day (`Day 1` to `Day 30`) and tech stack (`#NextJS`, `#MongoDB`, `#Prisma`).
 * **Verified Q&A Forum:** Dedicated help desk featuring resolution filters (`Unanswered`, `Most Voted`, `Resolved`) and official answer acceptance by instructors or question authors.
@@ -34,15 +34,15 @@ Students publish structured daily reflection logs tagged by active camp days and
 
 ---
 
-###  Technical Arsenal & Architecture
+##  Technical Arsenal & Architecture
 
-####  Core Framework & Languages
+###  Core Framework & Languages
 ![Next.js](https://img.shields.io/badge/Next.js%2016-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React%2019-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-#### Backend, Data & Auth
+### Backend, Data & Auth
 ![NodeJS](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Prisma](https://img.shields.io/badge/Prisma_ORM-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
@@ -50,7 +50,7 @@ Students publish structured daily reflection logs tagged by active camp days and
 
 ---
 
-### System Specification Summary
+## System Specification Summary
 
 | Domain | Technology | Implementation Details |
 | :--- | :--- | :--- |
@@ -64,9 +64,8 @@ Students publish structured daily reflection logs tagged by active camp days and
 
 ---
 
-###  Repository Directory Architecture
+##  Repository Directory Architecture
 
-### text
 INSA_Daily_Activity/
 └── insa/
     ├── prisma/
@@ -93,9 +92,9 @@ INSA_Daily_Activity/
 
 ---
 
-###  Getting Started
+##  Getting Started
 
-#### 1.  Prerequisites
+### 1.  Prerequisites
 
 Ensure your local development environment meets the following baseline requirements:
 
@@ -107,52 +106,50 @@ Ensure your local development environment meets the following baseline requireme
 
 ---
 
-#### 2.  Installation & Local Setup
+### 2.  Installation & Local Setup
 
 **bash**
-# 1. Clone the repository
+#### 1. Clone the repository
 git clone [https://github.com/Kenenisa1/INSA_Daily_Activity.git](https://github.com/Kenenisa1/INSA_Daily_Activity.git)
 cd INSA_Daily_Activity/insa
 
-# 2. Install project dependencies
+#### 2. Install project dependencies
 npm install
 
-# 3. Configure your environment file (.env)
+#### 3. Configure your environment file (.env)
 cp .env.example .env
 
-> ** Environment Variable Setup**  
+ ## Environment Variable Setup
 > Populate your `.env` file in the `insa/` directory with your database connection string and secret keys:
-
-env
-# MongoDB Connection String
+**MongoDB Connection String**
 DATABASE_URL="mongodb+srv://<username>:<password>@cluster.mongodb.net/insa_camp_db?retryWrites=true&w=majority"
 
-# Authentication Security Settings
+**Authentication Security Settings**
 NEXTAUTH_SECRET="your-32-character-production-secret-key"
 NEXTAUTH_URL="http://localhost:3000"
 
 bash
-### 4. Push Prisma schema to MongoDB
+4. Push Prisma schema to MongoDB
 npx prisma db push
 
-# 5. Seed initial mock data (Users, Posts, Q&A)
+//5. Seed initial mock data (Users, Posts, Q&A)
 npx prisma db seed
 
-# 6. Launch the development server
+// 6. Launch the development server
 npm run dev
 Visit http://localhost:3000 in your browser to view the application live!
 
-### Quality Assurance & Test Suite
+## Quality Assurance & Test Suite
 Run the full testing pipeline using the following standard commands:
 
 **Bash**
-# Execute unit & integration tests (Zod schemas, Server Actions)
+ Execute unit & integration tests (Zod schemas, Server Actions)
 npm run test:unit
 
-# Execute End-to-End (E2E) browser automation tests
+// Execute End-to-End (E2E) browser automation tests
 npm run test:e2e
 
-# Run linting check across all TypeScript & App Router files
+// Run linting check across all TypeScript & App Router files
 npm run lint
 ## Project System Documentation
 Comprehensive architecture design documents are available inside the /docs directory:
@@ -165,7 +162,7 @@ Comprehensive architecture design documents are available inside the /docs direc
 
 **[DB Spec] Database Specification**: Prisma schema layout, embedded document strategies, and MongoDB index optimization.
 
-### Author & Acknowledgments
+## Author & Acknowledgments
  ## License
 This project is open-source software licensed under the MIT License.
 
