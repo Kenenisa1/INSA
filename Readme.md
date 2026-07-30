@@ -129,15 +129,19 @@ cp .env.example .env
 NEXTAUTH_SECRET="your-32-character-production-secret-key"
 NEXTAUTH_URL="http://localhost:3000"
 
-bash
-4. Push Prisma schema to MongoDB
+#### bash
+**Push Prisma schema to MongoDB**
+
 npx prisma db push
 
-//5. Seed initial mock data (Users, Posts, Q&A)
+**Seed initial mock data (Users, Posts, Q&A)** 
+
 npx prisma db seed
 
-**.Launch the development server**
+**Launch the development server**
+
 npm run dev
+
 Visit http://localhost:3000 in your browser to view the application live!
 
 ## Quality Assurance & Test Suite
