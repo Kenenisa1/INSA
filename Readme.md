@@ -64,31 +64,38 @@ Students publish structured daily reflection logs tagged by active camp days and
 
 ---
 
+##  Repository Directory Architecture
+
 ```text
 INSA_Daily_Activity/
 └── insa/
-    ├── prisma/
-    │   ├── schema.prisma          # MongoDB Prisma models (@db.ObjectId)
-    │   └── seed.ts                # Database seed script for development
-    ├── src/
-    │   ├── app/                   # Next.js 16 App Router
-    │   │   ├── (auth)/            # Unauthenticated routes (login/register)
-    │   │   ├── api/               # REST API route handlers & NextAuth handler
-    │   │   ├── post/[id]/         # Post detail view (Async params handling)
-    │   │   ├── profile/           # User activity & profile dashboard
-    │   │   ├── questions/         # Q&A discussion board
-    │   │   ├── globals.css        # Global CSS variables & dark design tokens
-    │   │   ├── layout.tsx         # Root layout wrapper
-    │   │   └── page.tsx           # Main activity feed
-    │   ├── actions/               # React Server Actions
-    │   │   ├── post-actions.ts    # createPostAction(), toggleReactionAction()
-    │   │   └── qa-actions.ts      # resolveAnswerAction()
-    │   ├── components/            # Reusable React UI components
-    │   ├── lib/                   # System infrastructure (db.ts, auth.ts)
-    │   └── types/                 # Custom TypeScript interfaces & module augments
+    ├── app/                       # Next.js 16 App Router (Root-level)
+    │   ├── post/
+    │   │   └── page.tsx           # Post feed page
+    │   ├── profile/
+    │   │   └── page.tsx           # Student profile & progress page
+    │   ├── questions/
+    │   │   └── page.tsx           # Q&A discussion board
+    │   ├── favicon.ico            # Application favicon
+    │   ├── globals.css        # Global CSS variables & styling
+    │   ├── layout.tsx         # Root layout wrapper
+    │   └── page.tsx           # Main activity feed / homepage
+    ├── public/                    # Static assets & SVG icons
+    │   ├── assets/
+    │   ├── file.svg
+    │   ├── globe.svg
+    │   ├── next.svg
+    │   ├── vercel.svg
+    │   └── window.svg
+    ├── .gitignore
+    ├── AGENTS.md
+    ├── CLAUDE.md
+    ├── eslint.config.mjs          # ESLint configuration
+    ├── next-env.d.ts
     ├── next.config.ts             # Next.js 16 framework configuration
-    └── package.json
-```
+    ├── package-lock.json
+    ├── package.json               # Manifest file containing dependencies & scripts
+    └── postcss.config.mjs         # PostCSS configuration
 ---
 
 ##  Getting Started
