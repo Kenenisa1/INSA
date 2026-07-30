@@ -111,22 +111,27 @@ Ensure your local development environment meets the following baseline requireme
 **bash**
 #### 1. Clone the repository
 git clone [https://github.com/Kenenisa1/INSA_Daily_Activity.git](https://github.com/Kenenisa1/INSA_Daily_Activity.git)
+
 cd INSA_Daily_Activity/insa
 
 #### 2. Install project dependencies
+
 npm install
 
 #### 3. Configure your environment file (.env)
+
 cp .env.example .env
 
  ## Environment Variable Setup
 > Populate your `.env` file in the `insa/` directory with your database connection string and secret keys:
+> 
 **MongoDB Connection String**
 > DATABASE_URL="mongodb+srv://<username>:<password>@cluster.mongodb.net/insa_camp_db?retryWrites=true&w=majority"
 
 **Authentication Security Settings**
 
 NEXTAUTH_SECRET="your-32-character-production-secret-key"
+
 NEXTAUTH_URL="http://localhost:3000"
 
 #### bash
