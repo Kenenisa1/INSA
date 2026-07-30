@@ -1,139 +1,201 @@
- # ⚡ INSA Camp Pulse (INSA Summer Camp Blog Platform)
+ INSA Camp Pulse
+INSA Summer Camp Blog Platform
+Table of Contents
+Overview
 
-[![Next.js 16](https://img.shields.io/badge/Next.js-16%20App%20Router-black?style=flat-square&logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Document%20DB-green?style=flat-square&logo=mongodb)](https://www.mongodb.com/)
-[![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?style=flat-square&logo=prisma)](https://www.prisma.io/)
-[![NextAuth.js](https://img.shields.io/badge/NextAuth.js-v4-purple?style=flat-square&logo=react)](https://next-auth.js.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+Key Features
 
-> A modern, full-stack daily learning log, progress tracker, and technical Q&A platform built for students and trainers at the **INSA Summer Camp**.
+Technology Stack
 
----
+Project Structure
 
-## 📖 Overview
+Installation Guide
 
-**INSA Camp Pulse** streamlines technical communication and knowledge sharing during the intensive INSA Summer Camp. Students submit structured daily reflection posts tagged by active camp days and tech stacks, interact via threaded comments, and seek technical assistance on the Q&A forum board where trainers and post authors mark verified solutions.
+Testing Suite
 
----
+Documentation
 
-## ✨ Key Features
+Author & License
 
-* **📅 Daily Progress Feed:** Students publish daily coding logs tagged with active camp days (e.g., `Day 1` to `Day 30`) and tech tags (`#NextJS`, `#MongoDB`, `#Prisma`).
-* **❓ Verified Q&A Forum:** Dedicated help desk with search filters (`Unanswered`, `Most Voted`, `Resolved`) and official answer acceptance by trainers or question authors.
-* **🔐 Role-Based Access Control (RBAC):** Distinct permissions and UI badges for `STUDENT`, `TRAINER`, and `ADMIN` powered by NextAuth.js JWT claims.
-* **⚡ Server Actions (Next.js 16):** Fully type-safe backend mutations directly integrated with Prisma ORM and React Server Components.
-* **🌙 Dark Glassmorphism UI:** Custom OLED-dark aesthetic optimized for low eyestrain during long coding sessions.
+Overview
+INSA Camp Pulse is a modern, full-stack daily learning log, progress tracker, and technical Q&A platform designed for students and trainers at the INSA Summer Camp. The platform streamlines technical communication and knowledge sharing during intensive coding sessions.
 
----
+Students can submit structured daily reflection posts, interact via threaded comments, and seek technical assistance through a dedicated Q&A forum board where trainers and post authors can mark verified solutions.
 
-## 🛠️ Tech Stack
+Key Features
+Daily Progress Feed
+Students publish daily coding logs tagged with active camp days (Day 1 to Day 30)
 
-| Domain | Technology | Description |
-| :--- | :--- | :--- |
-| **Framework** | **Next.js 16** | React 19 App Router with dynamic async params and Server Actions |
-| **Language** | **TypeScript** | End-to-end type safety connecting Prisma models, Zod, and UI |
-| **Database** | **MongoDB** | High-performance document database with native `@db.ObjectId` mappings |
-| **Data Layer** | **Prisma ORM** | Schema-driven Object-Document Mapper (ODM) |
-| **Authentication** | **NextAuth.js** | JWT session strategy with custom role assertions |
-| **Styling** | **Tailwind CSS** | Custom CSS variables & glassmorphism tokens |
-| **Testing** | **Vitest / Playwright** | Unit, integration, and E2E browser automation suite |
+Posts can be categorized with technology tags (NextJS, MongoDB, Prisma)
 
----
+Real-time feed updates and chronological organization
 
-## 📂 Repository Directory Structure
+Verified Q&A Forum
+Dedicated help desk for technical queries
 
-```text
+Advanced search filters: Unanswered, Most Voted, Resolved
+
+Official answer acceptance by trainers or question authors
+
+Solution verification system for quality assurance
+
+Role-Based Access Control (RBAC)
+Distinct permissions for STUDENT, TRAINER, and ADMIN roles
+
+Visual UI badges indicating user roles
+
+JWT-based authentication with custom role assertions
+
+Server Actions (Next.js 16)
+Type-safe backend mutations integrated with Prisma ORM
+
+React Server Components for optimal performance
+
+Seamless client-server communication
+
+Dark Glassmorphism UI
+Custom OLED-dark aesthetic optimized for low eyestrain
+
+Glassmorphism design tokens for modern visual experience
+
+Responsive design for all screen sizes
+
+Technology Stack
+Domain	Technology	Purpose
+Framework	Next.js 16	React 19 App Router with dynamic async params
+Language	TypeScript	End-to-end type safety across the application
+Database	MongoDB	Document database with native ObjectId mappings
+Data Layer	Prisma ORM	Object-Document Mapper for database operations
+Authentication	NextAuth.js	JWT session strategy with role assertions
+Styling	Tailwind CSS	Custom CSS variables and glassmorphism tokens
+Testing	Vitest / Playwright	Unit testing and E2E browser automation
+Project Structure
+text
 INSA_Daily_Activity/
 └── insa/
     ├── prisma/
-    │   ├── schema.prisma          # MongoDB Prisma models (@db.ObjectId)
-    │   └── seed.ts                # Database seed script
+    │   ├── schema.prisma          # MongoDB models with @db.ObjectId
+    │   └── seed.ts                # Database seeding script
     ├── src/
-    │   ├── app/                   # Next.js 16 App Router
-    │   │   ├── (auth)/            # Auth routes (login/register)
-    │   │   ├── api/               # API route handlers & NextAuth handlers
-    │   │   ├── post/[id]/         # Post details page (async params)
-    │   │   ├── profile/           # User progress profile page
-    │   │   ├── questions/         # Q&A forum board page
-    │   │   ├── globals.css        # Global CSS variables & tokens
-    │   │   ├── layout.tsx         # Root application shell
-    │   │   └── page.tsx           # Main Feed / Dashboard
-    │   ├── actions/               # Next.js 16 React Server Actions
-    │   │   ├── post-actions.ts    # createPostAction(), toggleReactionAction()
-    │   │   └── qa-actions.ts      # resolveAnswerAction()
+    │   ├── app/
+    │   │   ├── (auth)/            # Authentication routes
+    │   │   ├── api/               # API route handlers
+    │   │   ├── post/[id]/         # Individual post details
+    │   │   ├── profile/           # User profile page
+    │   │   ├── questions/         # Q&A forum board
+    │   │   ├── globals.css        # Global styling and tokens
+    │   │   ├── layout.tsx         # Root application layout
+    │   │   └── page.tsx           # Main feed/dashboard
+    │   ├── actions/               # React Server Actions
+    │   │   ├── post-actions.ts    # Post creation and reactions
+    │   │   └── qa-actions.ts      # Q&A resolution actions
     │   ├── components/            # Reusable UI components
-    │   ├── lib/                   # Infrastructure configs (db.ts, auth.ts)
-    │   └── types/                 # Extended TypeScript interfaces
-    ├── next.config.ts             # Next.js 16 configuration
-    └── package.json
+    │   ├── lib/                   # Infrastructure configuration
+    │   ├── types/                 # TypeScript type definitions
+    │   └── utils/                 # Utility functions
+    ├── next.config.ts             # Next.js configuration
+    ├── package.json               # Dependencies and scripts
+    ├── tsconfig.json              # TypeScript configuration
+    └── .env.example               # Environment variables template
+Installation Guide
+Prerequisites
+Node.js v18.17.0 or higher
 
+npm or pnpm package manager
 
-Getting Started
-1. Prerequisites
-Node.js: v18.17.0 or higher
+MongoDB instance (local or MongoDB Atlas cloud cluster)
 
-npm or pnpm
+Setup Instructions
+Clone the Repository
 
-MongoDB: Local MongoDB instance or a cloud cluster on MongoDB Atlas
-
-2. Installation & Local Setup
-Clone the Repository:
-git clone [https://github.com/Kenenisa1/INSA_Daily_Activity.git](https://github.com/Kenenisa1/INSA_Daily_Activity.git)
+bash
+git clone https://github.com/Kenenisa1/INSA_Daily_Activity.git
 cd INSA_Daily_Activity/insa
+Install Dependencies
 
-Install Dependencies:
-
-Bash
+bash
 npm install
-Configure Environment Variables:
-Create a .env file inside the insa/ directory:
+Configure Environment Variables
 
-Code snippet
+Create a .env file in the insa/ directory:
+
+env
 # MongoDB Connection String
 DATABASE_URL="mongodb+srv://<username>:<password>@cluster.mongodb.net/insa_camp_db?retryWrites=true&w=majority"
 
 # NextAuth Security Settings
 NEXTAUTH_SECRET="your-32-character-secret-key"
 NEXTAUTH_URL="http://localhost:3000"
-Sync Prisma Database Schema:
+Sync Database Schema
 
-Bash
+bash
 npx prisma db push
-Seed Initial Test Data (Tags & Accounts):
+Seed Test Data
 
-Bash
+bash
 npx prisma db seed
-Start the Development Server:
+Start Development Server
 
-Bash
+bash
 npm run dev
-Open http://localhost:3000 in your browser to view the app.
+Access Application
 
-🧪 Testing Suite
-Bash
-# Run unit tests for Zod schemas & server actions
+Open http://localhost:3000 in your browser
+
+Testing Suite
+Unit Tests
+bash
 npm run test:unit
+Tests Zod schemas for validation
 
-# Run full End-to-End (E2E) browser tests with Playwright
+Validates server action functionality
+
+Checks utility functions and helpers
+
+End-to-End Tests
+bash
 npm run test:e2e
-📄 Complete Project Documentation
-Full technical documentations are available inside the docs/ folder:
+Full browser automation with Playwright
 
-SRS: Software Requirements Specification
+Tests critical user journeys
+
+Validates authentication flows
+
+Checks CRUD operations
+
+Documentation
+Comprehensive technical documentation is available in the docs/ folder:
+
+SRS: Software Requirements Specification document
 
 SAD: System Architecture Document (Next.js 16 + MongoDB)
 
-API Spec: Server Action Payload Contracts
+API Spec: Complete server action payload contracts
 
-Database Spec: Complete Prisma Schema
+Database Spec: Detailed Prisma schema documentation
 
-👨‍💻 Author & Acknowledgments
-Developer: Kenenisa Mieso (GitHub Profile | LinkedIn)
+Author & License
+Author
+Kenenisa Mieso
+
+GitHub: Kenenisa1
+
+LinkedIn: Kenenisa Mieso
 
 Role: Full-Stack MERN / Next.js Developer
 
 Institution: Arba Minch University & INSA Summer Camp
 
-📜 License
-Distributed under the MIT License. See LICENSE for details.
+License
+Distributed under the MIT License. See LICENSE file for details.
+
+Support
+For issues, questions, or contributions:
+
+Submit issues via GitHub Issues
+
+Contact the author directly
+
+Refer to documentation in the docs/ folder
+
+Last Updated: July 2026
