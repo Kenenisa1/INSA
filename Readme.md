@@ -122,9 +122,10 @@ cp .env.example .env
  ## Environment Variable Setup
 > Populate your `.env` file in the `insa/` directory with your database connection string and secret keys:
 **MongoDB Connection String**
-DATABASE_URL="mongodb+srv://<username>:<password>@cluster.mongodb.net/insa_camp_db?retryWrites=true&w=majority"
+> DATABASE_URL="mongodb+srv://<username>:<password>@cluster.mongodb.net/insa_camp_db?retryWrites=true&w=majority"
 
 **Authentication Security Settings**
+
 NEXTAUTH_SECRET="your-32-character-production-secret-key"
 NEXTAUTH_URL="http://localhost:3000"
 
@@ -135,21 +136,23 @@ npx prisma db push
 //5. Seed initial mock data (Users, Posts, Q&A)
 npx prisma db seed
 
-// 6. Launch the development server
+**.Launch the development server**
 npm run dev
 Visit http://localhost:3000 in your browser to view the application live!
 
 ## Quality Assurance & Test Suite
 Run the full testing pipeline using the following standard commands:
 
-**Bash**
+#### Bash
  Execute unit & integration tests (Zod schemas, Server Actions)
 npm run test:unit
 
-// Execute End-to-End (E2E) browser automation tests
+**Execute End-to-End (E2E) browser automation tests**
+
 npm run test:e2e
 
-// Run linting check across all TypeScript & App Router files
+ **Run linting check across all TypeScript & App Router files**
+ 
 npm run lint
 ## Project System Documentation
 Comprehensive architecture design documents are available inside the /docs directory:
