@@ -96,6 +96,7 @@ INSA_Daily_Activity/
     ├── package-lock.json
     ├── package.json               # Manifest file containing dependencies & scripts
     └── postcss.config.mjs         # PostCSS configuration
+```
 ---
 
 ##  Getting Started
