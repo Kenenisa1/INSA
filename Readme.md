@@ -188,9 +188,12 @@ This project is open-source software licensed under the MIT License.
 ## Plaintext
 **MIT License**
 ---
+---
 <div align="center">
 
-![Dynamic Copyright](https://img.shields.io/date/1735689600?label=Copyright%20%C2%A9%20&style=flat-square&color=000000)
+<!-- START_SECTION:copyright -->
+© 2026 Kenenisa Mieso. All rights reserved.
+<!-- END_SECTION:copyright -->
 
 </div>
 
