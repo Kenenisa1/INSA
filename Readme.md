@@ -190,7 +190,7 @@ This project is open-source software licensed under the MIT License.
 ---
 <div align="center">
 
-[![Copyright](https://img.shields.io/badge/Copyright_©-2026--present_Kenenisa_Mieso-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Kenenisa1)
+![Dynamic Copyright](https://img.shields.io/date/1735689600?label=Copyright%20%C2%A9%20&style=flat-square&color=000000)
 
 </div>
 
