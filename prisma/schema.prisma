@@ -1,0 +1,160 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGODB_URI")
+}
+
+enum Role {
+  STUDENT
+  TRAINER
+  ADMIN
+}
+
+enum ReactionType {
+  LIKE
+  DISLIKE
+}
+
+model User {
+  id             String    @id @map("_id") @default(auto()) @db.ObjectId
+  name           String
+  email          String    @unique
+  password       String?
+  role           Role      @default(STUDENT)
+  avatarUrl      String?
+  bio            String?
+  githubUrl      String?
+  linkedinUrl    String?
+  currentCampDay Int?
+
+  posts          Post[]    @relation("UserPosts")
+  comments       Comment[]
+  reactions      Reaction[]
+  questions      Question[]
+  answers        Answer[]
+  accounts       Account[]
+  sessions       Session[]
+
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model Account {
+  id                 String   @id @map("_id") @default(auto()) @db.ObjectId
+  userId             String   @db.ObjectId
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?
+  access_token       String?
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?
+  session_state      String?
+
+  user               User     @relation(fields: [userId], references: [id])
+}
+
+model Session {
+  id           String   @id @map("_id") @default(auto()) @db.ObjectId
+  sessionToken String   @unique
+  userId       String   @db.ObjectId
+  expires      DateTime
+
+  user         User     @relation(fields: [userId], references: [id])
+}
+
+model Post {
+  id         String    @id @map("_id") @default(auto()) @db.ObjectId
+  title      String
+  content    String
+  imageUrl   String?
+  dayBadge   Int
+  isFeatured Boolean   @default(false)
+  authorId   String    @db.ObjectId
+  tagIds     String[]  @db.ObjectId
+
+  author     User      @relation("UserPosts", fields: [authorId], references: [id])
+  comments   Comment[]
+  reactions  Reaction[]
+
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  @@index([authorId])
+  @@index([dayBadge])
+}
+
+model Comment {
+  id         String   @id @map("_id") @default(auto()) @db.ObjectId
+  content    String
+  postId     String   @db.ObjectId
+  authorId   String   @db.ObjectId
+  parentId   String?  @db.ObjectId
+
+  post       Post     @relation(fields: [postId], references: [id])
+  author     User     @relation(fields: [authorId], references: [id])
+  parent     Comment? @relation("CommentReplies", fields: [parentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  replies    Comment[] @relation("CommentReplies")
+
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([postId])
+}
+
+model Reaction {
+  id        String       @id @map("_id") @default(auto()) @db.ObjectId
+  type      ReactionType
+  userId    String       @db.ObjectId
+  postId    String       @db.ObjectId
+
+  user      User         @relation(fields: [userId], references: [id])
+  post      Post         @relation(fields: [postId], references: [id])
+
+  createdAt DateTime     @default(now())
+
+  @@unique([userId, postId])
+}
+
+model Question {
+  id         String   @id @map("_id") @default(auto()) @db.ObjectId
+  title      String
+  content    String
+  isResolved Boolean  @default(false)
+  authorId   String   @db.ObjectId
+  tagIds     String[] @db.ObjectId
+
+  author     User     @relation(fields: [authorId], references: [id])
+  answers    Answer[]
+
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Answer {
+  id         String   @id @map("_id") @default(auto()) @db.ObjectId
+  content    String
+  isAccepted Boolean  @default(false)
+  questionId String   @db.ObjectId
+  authorId   String   @db.ObjectId
+
+  question   Question @relation(fields: [questionId], references: [id])
+  author     User     @relation(fields: [authorId], references: [id])
+
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Tag {
+  id          String   @id @map("_id") @default(auto()) @db.ObjectId
+  name        String   @unique
+  slug        String   @unique
+  description String?
+
+  // No direct relations stored here; posts/questions hold tagIds arrays
+}
