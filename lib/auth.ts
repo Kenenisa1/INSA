@@ -1,31 +1,13 @@
-import type { NextAuthOptions, DefaultSession } from "next-auth";
-import type { JWT } from "next-auth/jwt";
+import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import type { Role } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 import prisma from "./db";
 import bcrypt from "bcryptjs";
 
-declare module "next-auth" {
-  interface Session extends DefaultSession {
-    user: DefaultSession["user"] & {
-      id: string;
-      role: Role;
-      currentCampDay?: number | null;
-    };
-  }
-}
-
-declare module "next-auth/jwt" {
-  interface JWT {
-    userId?: string;
-    role?: Role;
-    currentCampDay?: number | null;
-  }
-}
-
 export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma as any),
+  adapter: PrismaAdapter(prisma as unknown as PrismaClient),
   providers: [
     CredentialsProvider({
       id: "credentials",
@@ -77,6 +59,9 @@ export const authOptions: NextAuthOptions = {
   ],
   pages: {
     signIn: "/login",
+  },
+  session: {
+    strategy: "jwt",
   },
   callbacks: {
     async jwt({ token, user }) {
