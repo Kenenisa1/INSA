@@ -22,10 +22,31 @@ async function createPostActionHandler(
     return { success: false, error: "Authentication required." };
   }
 
-  const tagIds = formData
-    .getAll("tagIds")
-    .map((value) => String(value).trim())
+  const customTagsString = String(formData.get("customTags") ?? "").trim();
+  const tagNames = customTagsString
+    .split(",")
+    .map((t) => t.trim())
     .filter(Boolean);
+
+  if (tagNames.length === 0) {
+    return { success: false, error: "Please write at least one tag." };
+  }
+
+  // Find or create tags dynamically
+  const tagIds: string[] = [];
+  try {
+    for (const name of tagNames) {
+      const slug = name.toLowerCase().replace(/\s+/g, "-");
+      const tag = await prisma.tag.upsert({
+        where: { name },
+        update: {},
+        create: { name, slug },
+      });
+      tagIds.push(tag.id);
+    }
+  } catch (error) {
+    return { success: false, error: "Failed to process tags." };
+  }
 
   const payload = {
     title: String(formData.get("title") ?? "").trim(),
@@ -34,10 +55,6 @@ async function createPostActionHandler(
     dayBadge: Number(formData.get("dayBadge") ?? 1),
     tagIds,
   };
-
-  if (tagIds.length === 0) {
-    return { success: false, error: "Please select at least one tag." };
-  }
 
   try {
     const parsed = CreatePostSchema.parse(payload);
