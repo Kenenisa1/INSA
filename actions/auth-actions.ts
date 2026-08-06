@@ -3,7 +3,7 @@
 import bcrypt from "bcryptjs";
 import { redirect } from "next/navigation";
 import prisma from "../lib/db";
-import { RegisterSchema, RegisterInput } from "../lib/validations/auth";
+import { RegisterSchema } from "../lib/validations/auth";
 
 export async function registerUserAction(
   form: FormData,
@@ -12,7 +12,6 @@ export async function registerUserAction(
     name: form.get("name")?.toString().trim() ?? "",
     email: form.get("email")?.toString().trim().toLowerCase() ?? "",
     password: form.get("password")?.toString() ?? "",
-    role: (form.get("role")?.toString() as RegisterInput["role"]) ?? "STUDENT",
   };
 
   const result = RegisterSchema.safeParse(values);
@@ -40,7 +39,7 @@ export async function registerUserAction(
         name: result.data.name,
         email: result.data.email,
         password: hashedPassword,
-        role: result.data.role,
+        role: "STUDENT",
       },
     });
   } catch (error) {
